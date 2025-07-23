@@ -1,0 +1,35 @@
+# Binaries
+/myapp
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Build output
+bin/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Go modules cache
+vendor/
+
+# Logs and temp files
+*.log
+/tmp/
+*.tmp
+
+# Go workspace files
+*.test
+
+# Ignore your local env or config files (if any)
+.env
