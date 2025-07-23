@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"net/http"
 	"portfolio/handlers"
 )
@@ -9,13 +9,14 @@ import (
 func main() {
 	server := http.NewServeMux()
 
-	server.HandleFunc("/", handlers.HomeHandler)
-
 	fs := http.FileServer(http.Dir("web/static"))
 	server.Handle("/static/", http.StripPrefix("/static/", fs))
+	server.HandleFunc("/", handlers.HomeHandler)
+	server.HandleFunc("/about", handlers.AboutHandler)
 
+	log.Println("🚀 Server starting on http://localhost:5000")
 	err := http.ListenAndServe(":5000", server)
 	if err != nil {
-		fmt.Printf("Failed to start server")
+		log.Fatalf("Failed to start server: %v", err)
 	}
 }

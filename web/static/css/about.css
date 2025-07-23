@@ -1,0 +1,114 @@
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background-color: #000000;
+  color: #CCCCCC;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-container h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #FFFFFF;
+}
+
+.about-container .dot {
+  color: #3F8E00;
+}
+
+.about-container .intro {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #CCCCCC;
+  line-height: 1.8;
+}
+
+.about-description {
+  margin-bottom: 3rem;
+  font-size: 1.3rem;
+  line-height: 2;
+  color: #CCCCCC;
+}
+
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+}
+
+.about-section p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #CCCCCC;
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-item {
+  background-color: #3F8E00;
+  color: #FFFFFF;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: default;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.skill-item:hover {
+  background-color: #62BA1B;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: #3F8E00;
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  border-color: #62BA1B;
+  color: #62BA1B;
+  background-color: transparent;
+}
+
+.info-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #CCCCCC;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  font-size: 1.15rem;
+}
+
+.info-list li::marker {
+  color: #62BA1B;
+}

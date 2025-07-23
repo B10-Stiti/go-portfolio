@@ -1,5 +1,6 @@
 package handlers
 
+
 import (
 	"fmt"
 	"net/http"
@@ -8,10 +9,10 @@ import (
 	"html/template"
 )
 
-func HomeHandler(w http.ResponseWriter, r *http.Request) {
+func AboutHandler(w http.ResponseWriter, r *http.Request) {
 	html, err := template.ParseFiles(
 		filepath.Join("web", "templates", "base.html"),
-		filepath.Join("web", "templates", "home.html"),
+		filepath.Join("web", "templates", "about.html"),
 		filepath.Join("web", "templates", "header.html"),
 		filepath.Join("web", "templates", "footer.html"),
 	)
@@ -21,8 +22,9 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("internal server error"))
 		return
 	}
-	err = html.ExecuteTemplate(w, "base", data.GetHomeData())
+	err = html.ExecuteTemplate(w, "base", data.GetAboutData())
 	if err != nil {
 		http.Error(w, "failed to render page", http.StatusInternalServerError)
+		fmt.Println("failed to render err :",err);
 	}
 }

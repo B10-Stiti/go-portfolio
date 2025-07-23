@@ -32,19 +32,25 @@
 }
 .btn-primary {
   display: inline-block;
-  background-color: #3F8E00; 
-  color: white;
+  margin-top: 2rem;
+  background-color: #3F8E00;
+  color: #FFFFFF;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1.25rem;
   text-decoration: none;
-  transition: background-color 0.3s;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
+
 .btn-primary:hover {
-  background-color: #62BA1B;
+  border-color: #62BA1B;
+  color: #62BA1B;
+  background-color: transparent;
 }
+
 
 .personal-image {
   flex: 0 0 350px;
