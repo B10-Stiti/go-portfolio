@@ -4,7 +4,12 @@ import (
 	"log"
 	"net/http"
 	"portfolio/handlers"
+	"github.com/joho/godotenv"
 )
+
+func init() {
+    _ = godotenv.Load()
+}
 
 func main() {
 	server := http.NewServeMux()
@@ -13,6 +18,9 @@ func main() {
 	server.Handle("/static/", http.StripPrefix("/static/", fs))
 	server.HandleFunc("/", handlers.HomeHandler)
 	server.HandleFunc("/about", handlers.AboutHandler)
+	server.HandleFunc("/contact", handlers.ContactHandler)
+	server.HandleFunc("/api/contact", handlers.FormHandler)
+	server.HandleFunc("/thankyou", handlers.ThankyouHandler)
 
 	log.Println("🚀 Server starting on http://localhost:5000")
 	err := http.ListenAndServe(":5000", server)
