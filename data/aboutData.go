@@ -1,15 +1,21 @@
 package data
 
-import "portfolio/models"
+import (
+	"portfolio/models"
+)
 
+var experience1 = models.Experience{
+	Title:       "Go Backend Intern",
+	Company:     "Holmona",
+	StartDate:   "July",
+	EndDate:     "August 2025",
+	Description: "Working on a personal portfolio website using Go, HTML templates, and CSS as part of a backend development learning internship.",
+}
 var dataAbout = models.AboutData{
 	AboutIntro: "Currently studying Computer Science at ISAMM.",
 	About:      "Passionate about building things with code. I love solving problems and learning by doing — whether it's web apps, mobile tools, or anything in between. Right now, I'm focused on leveling up through personal projects and real-world experience.",
-	Experience: []string{
-		"Built a full-stack Node.js app with MongoDB and Mongoose. Includes full CRUD, user auth with JWT, and bcrypt security.",
-		"Developed Pixamm, a mobile pixel art app using Java in Android Studio.",
-	},
-	Skills: []string{"React", "Node.js", "Go", "java", "Git", "GitHub", "Communication", "Problem Solving"},
+	Experience: []models.Experience {experience1, experience1,},
+	Skills:     []string{"React", "Node.js", "Go", "Java", "Git", "GitHub", "Communication", "Problem Solving"},
 }
 
 func GetAboutData() models.AboutData {

@@ -20,12 +20,16 @@
   <h2>Experience</h2>
   <ul class="info-list">
     {{ range .Experience }}
-    <li class="info-item">{{ . }}</li>
+    <li class="info-item">
+      <strong>{{ .Title }}</strong> at<em>{{ .Company }}</em><br>
+      <span>{{ .StartDate }} – {{ .EndDate }}</span><br>
+      <p>{{ .Description }}</p>
+    </li>
     {{ end }}
   </ul>
 </section>
 
-  <a href="#" class="btn-primary" target="_blank" rel="noopener noreferrer">View My Resume</a>
+  <a href="../static/maincv.pdf" class="btn-primary" target="_blank" rel="noopener noreferrer">View My Resume</a>
 
 </section>
 {{ end }}

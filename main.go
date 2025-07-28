@@ -21,6 +21,7 @@ func main() {
 	server.HandleFunc("/contact", handlers.ContactHandler)
 	server.HandleFunc("/api/contact", handlers.FormHandler)
 	server.HandleFunc("/thankyou", handlers.ThankyouHandler)
+	server.HandleFunc("/projects", handlers.ProjectHandler)
 
 	log.Println("🚀 Server starting on http://localhost:5000")
 	err := http.ListenAndServe(":5000", server)

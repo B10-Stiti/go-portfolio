@@ -1,0 +1,25 @@
+{{ define "content" }}
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="stylesheet" href="../static/css/projects.css">
+
+<section class="project-container">
+  <h1>Projects<span class="dot">.</span></h1>
+  <p class="intro"> A collection of projects I've worked on.</p>
+  <div class="projects-grid">
+    {{ range . }}
+      <div class="project-card">
+        <img src="{{ .ImageUrl }}" alt="{{ .Title }}" />
+        <p class="title">{{ .Title }}</p>
+        <p>{{ .Description }}</p>
+        <a href="{{ .GithubRepo }}" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i> GitHub Repo
+        </a>
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

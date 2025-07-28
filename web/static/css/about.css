@@ -96,19 +96,54 @@
   background-color: transparent;
 }
 
+/* Experience Section Styles */
 .info-list {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  color: #CCCCCC;
-  margin-bottom: 2rem;
+  list-style-type: none; /* remove default bullets */
+  padding-left: 0;
+  margin-bottom: 2.5rem;
 }
 
 .info-item {
-  margin-bottom: 0.75rem;
+  background-color: #1B1B1B;   /* slightly lighter dark for contrast */
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
   font-size: 1.15rem;
+  box-shadow: 0 4px 8px rgba(62, 145, 21, 0.15); /* subtle greenish shadow */
+  transition: box-shadow 0.3s ease;
 }
 
-.info-list li::marker {
+.info-item:hover {
+  box-shadow: 0 6px 14px rgba(98, 186, 27, 0.3);
+}
+
+.info-item strong {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.info-item em {
   color: #62BA1B;
+  font-style: normal;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.info-item span {
+  display: block;
+  color: #9C9C9C;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  font-style: italic;
+}
+
+.info-item p {
+  margin: 0;
+  color: #CCCCCC;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
