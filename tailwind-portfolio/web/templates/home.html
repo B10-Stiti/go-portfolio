@@ -1,0 +1,25 @@
+{{ define "content" }}
+<link rel="stylesheet" href="../static/css/home.css" />
+
+<section class="intro-image-wrapper">
+  <div class="intro">
+    <h1>{{.Name}}</h1>
+    <p class="tagline">{{.Tagline}}</p>
+    <p>{{.Intro}}</p>
+    <a class="btn-primary" href="/projects">See My Work</a>
+  </div>
+
+  <div class="personal-image">
+    <img src="{{ .ImageURL }}" alt="Mohamed Badis Stiti" />
+  </div>
+</section>
+
+<section class="tech-stack">
+  <h2>Tech Stack</h2>
+  <ul class="tech-list">
+    {{range .TechStack}}
+    <li>{{.}}</li>
+    {{end}}
+  </ul>
+</section>
+{{ end }}

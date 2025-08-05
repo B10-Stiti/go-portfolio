@@ -33,3 +33,10 @@ vendor/
 
 # Ignore your local env or config files (if any)
 .env
+
+# Node and Tailwind
+node_modules/
+package-lock.json
+output.css
+tailwind.config.js
+postcss.config.js

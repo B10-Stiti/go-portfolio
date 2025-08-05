@@ -1,0 +1,34 @@
+{{ define "content" }}
+<link rel="stylesheet" href="../static/css/contact.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<section class="contact-container">
+  <h1>Contact<span class="dot">.</span></h1>
+  
+  <p class="intro">{{ .ContactIntro }}</p>
+
+  <div class="contact-social-links">
+    {{ range $key, $value := .SocialLinks }}
+      <a href="{{ $value }}" target="_blank" rel="noopener" aria-label="{{ $key }}">
+        {{ if eq $key "GitHub" }}<i class="fab fa-github"></i>{{ end }}  <!-- eq x y means x == y-->
+        {{ if eq $key "LinkedIn" }}<i class="fab fa-linkedin"></i>{{ end }} 
+        {{ if eq $key "Instagram" }}<i class="fab fa-instagram"></i>{{ end }}
+      </a>
+    {{ end }}
+  </div>
+
+<form action="/api/contact" method="post">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
+
+  <input type="submit" value="Send a message">
+</form>
+
+</section>
+{{ end }}
