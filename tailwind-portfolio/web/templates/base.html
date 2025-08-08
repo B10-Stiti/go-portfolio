@@ -6,13 +6,10 @@
     <title> Badis Portfolio </title>
     <link rel="stylesheet" href="../static/output.css" />
   </head>
-  <body>
-    <h1 class="text-2xl font-bold underline">
-      niggers
-    </h1>
+  <body class="flex flex-col min-h-screen">
     {{ template "header" . }}
 
-    <main class="main-content">
+    <main class="flex flex-grow">
       {{ block "content" . }}{{ end }}
     </main>
 

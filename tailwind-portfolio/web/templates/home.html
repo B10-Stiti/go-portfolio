@@ -1,25 +1,44 @@
 {{ define "content" }}
-<link rel="stylesheet" href="../static/css/home.css" />
+<section
+  class="flex-grow flex items-center justify-center bg-[#1B1B1B] text-white px-8 py-16 w-full"
+>
+  <div class="relative max-w-3xl text-center w-full">
+    <!-- Floating left bracket near name/tagline -->
+    <span
+      class="absolute left-[-3.5rem] top-[2.5rem] -translate-y-1/2 text-9xl font-extrabold text-[#62BA1B] animate-float select-none"
+      aria-hidden="true"
+    >
+      &lt;
+    </span>
 
-<section class="intro-image-wrapper">
-  <div class="intro">
-    <h1>{{.Name}}</h1>
-    <p class="tagline">{{.Tagline}}</p>
-    <p>{{.Intro}}</p>
-    <a class="btn-primary" href="/projects">See My Work</a>
+    <!-- Floating right bracket near name/tagline -->
+    <span
+      class="absolute right-[-3.5rem] top-[2.5rem] -translate-y-1/2 text-9xl font-extrabold text-[#62BA1B] animate-float select-none"
+      aria-hidden="true"
+    >
+      &gt;
+    </span>
+
+    <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">{{.Name}}</h1>
+    <p class="text-3xl text-[#62BA1B] font-medium mb-6">{{.Tagline}}</p>
+    <p class="text-[#CCCCCC] text-lg md:text-xl lg:text-2xl mb-12 leading-relaxed md:leading-loose">
+      {{.Intro}}
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+      <a
+        href="/projects"
+        class="bg-[#3F8E00] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:bg-[#62BA1B] transition-all duration-300"
+      >
+        Explore My Work
+      </a>
+      <a
+        href="/about"
+        class="border border-[#62BA1B] text-[#62BA1B] px-8 py-4 rounded-xl text-lg font-medium hover:bg-[#1B1B1B] hover:text-white hover:border-white transition-all duration-300 shadow-[0_0_12px_#62BA1B33]"
+      >
+        Who I Am
+      </a>
+    </div>
   </div>
-
-  <div class="personal-image">
-    <img src="{{ .ImageURL }}" alt="Mohamed Badis Stiti" />
-  </div>
-</section>
-
-<section class="tech-stack">
-  <h2>Tech Stack</h2>
-  <ul class="tech-list">
-    {{range .TechStack}}
-    <li>{{.}}</li>
-    {{end}}
-  </ul>
 </section>
 {{ end }}

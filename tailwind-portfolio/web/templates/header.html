@@ -1,15 +1,47 @@
-{{ define "header" }}
-<link rel="stylesheet" href="../static/css/header.css" />
-<header class="header">
-  <div class="container">
-    <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+{{define "header"}}
+
+<header class="bg-[#1B1B1B] px-8 py-6 flex-shrink-0">
+  <div class="max-w-[1100px] mx-auto flex items-center justify-between">
+    <div class="text-4xl font-bold animated-gradient">
+      Be10
+    </div> 
+    
+    <nav>
+      <ul class="flex gap-8">
+        <li>
+          <a
+            href="/"
+            class="text-[#9C9C9C] text-lg font-medium hover:text-white transition-colors duration-300"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/projects"
+            class="text-[#9C9C9C] text-lg font-medium hover:text-white transition-colors duration-300"
+          >
+            Projects
+          </a>
+        </li>
+        <li>
+          <a
+            href="/about"
+            class="text-[#9C9C9C] text-lg font-medium hover:text-white transition-colors duration-300"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="/contact"
+            class="text-[#9C9C9C] text-lg font-medium hover:text-white transition-colors duration-300"
+          >
+            Contact
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
-{{ end }}
+{{end}}

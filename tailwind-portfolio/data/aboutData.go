@@ -16,6 +16,7 @@ var dataAbout = models.AboutData{
 	About:      "Passionate about building things with code. I love solving problems and learning by doing — whether it's web apps, mobile tools, or anything in between. Right now, I'm focused on leveling up through personal projects and real-world experience.",
 	Experience: []models.Experience {experience1, experience1,},
 	Skills:     []string{"React", "Node.js", "Go", "Java", "Git", "GitHub", "Communication", "Problem Solving"},
+	ImageURL : "../static/images/profil.jpeg",
 }
 
 func GetAboutData() models.AboutData {

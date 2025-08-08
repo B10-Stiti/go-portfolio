@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+.animated-gradient {
+  background: linear-gradient(270deg, #3F8E00, #62BA1B, #10B981);
+  background-size: 600% 600%;
+  animation: gradientShift 4s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@layer utilities {
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
