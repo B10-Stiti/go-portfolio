@@ -1,37 +1,53 @@
 {{ define "content" }}
-<link rel="stylesheet" href="../static/css/about.css" />
+<section class="bg-[#1B1B1B] text-white px-4 sm:px-8 py-16 flex flex-col items-center w-full min-h-screen">
 
-<section class="about-container">
-  <h1>About<span class="dot">.</span></h1>
+  <!-- Title -->
+  <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white">
+    About<span class="text-[#62BA1B]">.</span>
+  </h1>
 
-  <p class="intro">{{ .AboutIntro }}</p>
-  <p class="about-description">{{ .About }}</p>
-  <div class="personal-image">
-    <img src="{{ .ImageURL }}" alt="Mohamed Badis Stiti" />
-  </div>
-  <section class="about-section">
-    <h2>Technical & Soft Skills</h2>
-    <ul class="skills-list">
+  <!-- Intro -->
+  <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-[#CCCCCC] max-w-full sm:max-w-3xl md:max-w-4xl text-center mb-8 leading-relaxed">
+    {{ .AboutIntro }}
+  </p>
+
+  <!-- About description -->
+  <p class="text-[#CCCCCC] text-base sm:text-lg md:text-lg max-w-full sm:max-w-3xl md:max-w-4xl text-center mb-12 leading-relaxed">
+    {{ .About }}
+  </p>
+
+  <!-- Skills -->
+  <section class="mb-16 max-w-4xl w-full">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-[#62BA1B] mb-6">Technical & Soft Skills</h2>
+    <ul class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6">
       {{ range .Skills }}
-      <li class="skill-item">{{ . }}</li>
+      <li class="bg-[#2A2A2A] text-[#CCCCCC] px-4 py-2 rounded-lg shadow hover:shadow-lg hover:bg-[#3A3A3A] transition opacity-0 animate-fadeInUp">
+        {{ . }}
+      </li>
       {{ end }}
     </ul>
   </section>
 
-<section class="about-section">
-  <h2>Experience</h2>
-  <ul class="info-list">
-    {{ range .Experience }}
-    <li class="info-item">
-      <strong>{{ .Title }}</strong> at<em>{{ .Company }}</em><br>
-      <span>{{ .StartDate }} – {{ .EndDate }}</span><br>
-      <p>{{ .Description }}</p>
-    </li>
-    {{ end }}
-  </ul>
-</section>
+  <!-- Experience -->
+  <section class="mb-16 max-w-4xl w-full">
+    <h2 class="text-2xl sm:text-3xl font-semibold text-[#62BA1B] mb-6">Experience</h2>
+    <ul class="space-y-6 sm:space-y-8">
+      {{ range .Experience }}
+      <li class="bg-[#2A2A2A] p-6 rounded-xl shadow hover:shadow-lg hover:bg-[#3A3A3A] transition opacity-0 animate-fadeInUp">
+        <strong class="text-xl">{{ .Title }}</strong> at
+        <em class="text-[#62BA1B]">{{ .Company }}</em><br>
+        <span class="text-sm text-gray-400">{{ .StartDate }} – {{ .EndDate }}</span>
+        <p class="mt-4 text-[#CCCCCC] leading-relaxed">{{ .Description }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
 
-  <a href="../static/maincv.pdf" class="btn-primary" target="_blank" rel="noopener noreferrer">View My Resume</a>
+  <!-- Resume Button -->
+  <a href="../static/maincv.pdf" target="_blank" rel="noopener noreferrer"
+     class="bg-[#3F8E00] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:bg-[#62BA1B] transition-all duration-300 w-full sm:w-auto text-center">
+    View My Resume
+  </a>
 
 </section>
 {{ end }}

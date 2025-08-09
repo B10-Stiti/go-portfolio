@@ -5,5 +5,4 @@ type AboutData struct {
 	About      string
 	Experience []Experience
 	Skills     []string
-	ImageURL   string
 }
