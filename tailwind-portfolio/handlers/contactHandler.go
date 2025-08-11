@@ -56,7 +56,7 @@ func FormHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	client := resend.NewClient(apiKey)
 	params := &resend.SendEmailRequest{
-		From:    "onboarding@resend.dev",
+		From:    "badis_key@resend.dev",
 		To:      []string{"badisstiti11@gmail.com"},
 		Subject: "New message from your portfolio",
 		Html: fmt.Sprintf(`<p><strong>Name:</strong> %s</p>

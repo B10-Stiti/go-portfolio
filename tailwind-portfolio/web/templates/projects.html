@@ -1,25 +1,33 @@
 {{ define "content" }}
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
-<link rel="stylesheet" href="../static/css/projects.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-<section class="project-container">
-  <h1>Projects<span class="dot">.</span></h1>
-  <p class="intro"> A collection of projects I've worked on.</p>
-  <div class="projects-grid">
-    {{ range . }}
-      <div class="project-card">
-        <img src="{{ .ImageUrl }}" alt="{{ .Title }}" />
-        <p class="title">{{ .Title }}</p>
-        <p>{{ .Description }}</p>
-        <a href="{{ .GithubRepo }}" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github"></i> GitHub Repo
-        </a>
-      </div>
-    {{ end }}
+<section class="bg-[#1B1B1B] text-[#CCCCCC] py-16 min-h-screen w-full">
+  <div class="max-w-[1100px] mx-auto px-4 sm:px-8 flex flex-col items-center">
+    
+    <!-- Title -->
+    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+      Projects<span class="text-[#62BA1B]">.</span>
+    </h1>
+    <p class="text-xl text-[#9C9C9C] mb-12">
+      A collection of projects I've worked on.
+    </p>
+
+    <!-- Projects Grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
+      {{ range . }}
+        <div class="bg-[#111111] rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-[#62BA1B] transition-all duration-300 group">
+          <img src="{{ .ImageUrl }}" alt="{{ .Title }}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="p-6">
+            <p class="text-xl font-semibold text-white mb-2">{{ .Title }}</p>
+            <p class="text-sm text-[#9C9C9C] mb-4">{{ .Description }}</p>
+            <a href="{{ .GithubRepo }}" target="_blank" class="inline-flex items-center gap-2 text-[#62BA1B] hover:text-[#3F8E00] transition-colors duration-200">
+              <i class="fab fa-github text-lg"></i> GitHub Repo
+            </a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+
   </div>
 </section>
-
 {{ end }}
