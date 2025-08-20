@@ -3,7 +3,9 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 	"portfolio/handlers"
+
 	"github.com/joho/godotenv"
 )
 
@@ -24,7 +26,11 @@ func main() {
 	server.HandleFunc("/projects", handlers.ProjectHandler)
 
 	log.Println("🚀 Server starting on http://localhost:5000")
-	err := http.ListenAndServe(":5000", server)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "5000"
+	}
+	err := http.ListenAndServe(":"+port, server)
 	if err != nil {
 		log.Fatalf("Failed to start server: %v", err)
 	}

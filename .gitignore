@@ -36,7 +36,4 @@ vendor/
 
 # Node and Tailwind
 node_modules/
-package-lock.json
 output.css
-tailwind.config.js
-postcss.config.js
